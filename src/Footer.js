@@ -1,6 +1,10 @@
+import { useTranslation } from 'react-i18next';
+
 const Footer = () => {
+  const { i18n } = useTranslation();
+
   function changeLanguage(e) {
-    console.log('change language');
+    i18n.changeLanguage(e.target.value);
   }
 
   return(

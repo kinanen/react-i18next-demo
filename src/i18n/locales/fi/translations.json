@@ -1,1 +1,11 @@
-{}
+{
+    "home": "Koti",
+    "page2": "Sivu 2",
+    "welcome": "Tervetuloa, {{username}}",
+    "change-username": "Vaihda käyttäjätunnuksesi:",
+    "submit": "Lähetä",
+    "to-page-2": "Siirry <0>tästä</0> sivulle 2, {{username}}",
+    "this-is-page-2": "Tämä on <strong>sivu 2</strong>",
+    "go-to-home": "Go to <0> the home page </0>"
+    
+}

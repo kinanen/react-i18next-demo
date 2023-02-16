@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { withTranslation, Trans } from 'react-i18next';
 
 class Home extends Component {
+  
+
   constructor() {
     super();
 
@@ -24,22 +27,29 @@ class Home extends Component {
   }
 
   render() {
+    const { t } = this.props;
+
     const { username } = this.state;
 
     return (
       <div className='body'>
-        <p>Welcome, {username}</p>
+        <p>{t('welcome', {username: username})}</p>
 
         <div>
-          <label>Change your username:</label>
+          <label>{t('change-username')}</label>
           <input type='text' onChange={this.updateUsername.bind(this)} />
-          <button onClick={this.setUsername.bind(this)}>Submit</button>
+          <button onClick={this.setUsername.bind(this)}>{t('submit')}</button>
         </div>
 
-        <p>Click <Link to='/page2'>here</Link> to go to page 2, {username}</p>
+        <p>
+          <Trans i18nKey='to-page-2'> 
+            <Link to='/page2'></Link> 
+            {{username: username}}
+          </Trans>
+        </p>
       </div>
     );
   }
 }
 
-export default Home;
+export default withTranslation()(Home);
